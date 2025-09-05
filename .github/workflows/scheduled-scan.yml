@@ -1,0 +1,11 @@
+name: scheduled-coupon-scan
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: trigger scan endpoint
+        run: |
+          curl -X POST "$DEPLOY_URL/api/check-coupon" -H "Content-Type: application/json" -d '{"count":5,"prefix":"3M"}'
