@@ -1,0 +1,9 @@
+{
+  "build": {
+    "env": {}
+  },
+  "functions": {},
+  "engines": {
+    "node": "22.x"
+  }
+}
